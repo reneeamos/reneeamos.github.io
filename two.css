@@ -1,0 +1,92 @@
+body {
+ background-image: url("https://78.media.tumblr.com/311c89f50c00f9a14810673c0fd24748/tumblr_p8vxzptL3t1vqs93co1_500.gif");
+  cursor: url("https://78.media.tumblr.com/6bc897ac859d4dce59b70532193386c4/tumblr_inline_pcah2q91gY1ry72eo_75sq.gif"), auto;
+  color: white;
+  font-family: "comic sans ms", sans-serif;
+}
+
+#txt {
+  font-size: 23px;
+  text-align: center
+
+}
+
+#kerm {
+  padding-bottom: 0px;
+}
+#it {
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+
+#header {
+  text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+
+}
+
+#firetoad {
+  width: 300px;
+  height: 225px;
+
+}
+
+#amtoad {
+    width: 340px;
+    height: 225px;
+
+}
+
+#amtoadtwo {
+  height: 225px;
+  width: 281px;
+
+
+}
+
+
+ /*div #chatbox {
+  align: center;
+  padding-left: 30px;
+  padding-bottom: 60px;
+
+} */
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+
+}
+
+
+
+.links {
+    text-align:center;
+}
+/*.frog {
+  width: 100px;
+  height: 98px;
+  }*/
