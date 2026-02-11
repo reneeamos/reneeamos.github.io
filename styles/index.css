@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "Outfit Light";
+    src: url("fonts/Outfit-Light.ttf");   
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Outfit Black";
+    src: url("fonts/Outfit-Black.ttf");   
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: "ITC Gaillard Roman";
+    src: url("fonts/ITC Galliard Roman.otf");   
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ITC Gaillard Bold";
+    src: url("fonts/ITC Galliard Bold.otf");   
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Henderson Light";
+    src: url("fonts/HendersonSansLight.otf");   
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Henderson Regular";
+    src: url("fonts/HendersonSansRegular.otf");   
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+h2, h5 {
+    font-family: "Outfit Black";
+}
+
+p, a {
+    font-family: "Outfit Light";
+    line-height: 1.1;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    margin: 0 100px;
+}
+
+header {
+    grid-column: 1 / span 10;
+}
+
+a {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+p.double {
+    border-style: double;
+    border-width: 3px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    padding: 0px 0px 0px 0px;
+}
+
+h5.type {
+    color:white;
+    border: 5px;
+    
+}
+
+.project_container {
+    grid-column: 3 / span 10;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.title {
+    padding-left: 25px;
+}
+
+.type {
+    padding-left: 25px;
+    background-color: 2px solid #000; 
+}
+
+.desc {
+    padding-left: 25px;
+    grid-column: 2 / span 2;
+}
