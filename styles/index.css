@@ -47,12 +47,12 @@
     font-display: swap;
 }
 
-h2, h5 {
-    font-family: "Outfit Black";
+h6 {
+    font-family: "ITC Gaillard Bold";
 }
 
 p, a {
-    font-family: "Outfit Light";
+    font-family: "ITC Gaillard Roman";
     line-height: 1.1;
 }
 
