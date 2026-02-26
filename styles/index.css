@@ -47,10 +47,6 @@
     font-display: swap;
 }
 
-h6 {
-    font-family: "ITC Gaillard Bold";
-}
-
 p, a {
     font-family: "ITC Gaillard Roman";
     line-height: 1.1;
@@ -80,12 +76,6 @@ p.double {
     padding: 0px 0px 0px 0px;
 }
 
-h5.type {
-    color:white;
-    border: 5px;
-    
-}
-
 .project_container {
     grid-column: 3 / span 10;
 }
@@ -108,4 +98,8 @@ h5.type {
 .desc {
     padding-left: 25px;
     grid-column: 2 / span 2;
+}
+
+.name {
+    font-family: "ITC Gaillard Bold";
 }
