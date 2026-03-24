@@ -6,11 +6,12 @@
 async function loadPosts() {
   try {
     console.log("I'm trying");
-    // define a response to the fetch (async function that returns a promise that gets the post data)
-    const response = await fetch('list.json');
+    //fetch JSON data and pause execution until the promise resolves
+    const response = await fetch('blog/list.json');
 
     //convert the JSON response to a JS object posts
     const posts = await response.json();
+    console.log(posts);
 
     //get the container for blogs on blog.html
     const container = document.getElementById('posts');
@@ -37,7 +38,7 @@ async function loadPosts() {
 
       container.appendChild(postDiv);
     });
-  } catch() {
+  } catch {
     console.error('Error loading posts:', error);
     container.innerHTML =
       '<p>Failed to load posts. See console for error information.</p>';
