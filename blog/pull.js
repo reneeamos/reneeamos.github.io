@@ -38,7 +38,7 @@ async function loadPosts() {
 
       container.appendChild(postDiv);
     });
-  } catch {
+  } catch (error) {
     console.error('Error loading posts:', error);
     container.innerHTML =
       '<p>Failed to load posts. See console for error information.</p>';
