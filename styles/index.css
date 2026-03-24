@@ -103,3 +103,11 @@ p.double {
 .name {
     font-family: "ITC Gaillard Bold";
 }
+
+.left {
+    justify-items: end;
+}
+
+.span {
+    grid-column: 1 / span 6;
+}
