@@ -17,7 +17,7 @@ async function loadPosts() {
     const container = document.getElementById('posts');
 
     //loop through the JSON file, defining a lambda function to do the looping
-    posts.forEach(function (posts) {
+    posts.forEach(function (post) {
       //create a div for the post and add it to the post class for styling
       var postDiv = document.createElement('div');
       postDiv.classList.add('post');
@@ -25,15 +25,15 @@ async function loadPosts() {
       //fill the div with the post data
       postDiv.innerHTML =
         '<h2><a href="post.html?id=' +
-        posts.id +
+        post.id +
         '">' +
-        posts.title +
+        post.title +
         '</a></h2>' +
         '<p>' +
-        posts.summary +
+        post.summary +
         '</p>' +
         '<small>' +
-        posts.date +
+        post.date +
         '</small>';
 
       container.appendChild(postDiv);
