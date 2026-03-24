@@ -25,23 +25,23 @@ async function loadPosts() {
       //fill the div with the post data
       postDiv.innerHTML =
         '<h2><a href="post.html?id=' +
-        post.id +
+        posts.id +
         '">' +
-        post.title +
+        posts.title +
         '</a></h2>' +
         '<p>' +
-        post.summary +
+        posts.summary +
         '</p>' +
         '<small>' +
-        post.date +
+        posts.date +
         '</small>';
 
       container.appendChild(postDiv);
     });
   } catch (error) {
     console.error('Error loading posts:', error);
-    container.innerHTML =
-      '<p>Failed to load posts. See console for error information.</p>';
+    //container.innerHTML =
+    //'<p>Failed to load posts. See console for error information.</p>';
   }
 }
 
