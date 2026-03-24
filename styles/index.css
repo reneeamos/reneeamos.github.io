@@ -105,9 +105,9 @@ p.double {
 }
 
 .left {
-    justify-items: end;
+    justify-items: right;
 }
 
 .span {
-    grid-column: 1 / span 6;
+    grid-column: 1 / span 10;
 }
