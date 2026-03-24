@@ -5,8 +5,9 @@
 
 async function loadPosts() {
   try {
+    console.log("I'm trying");
     // define a response to the fetch (async function that returns a promise that gets the post data)
-    const response = await fetch('./list.json');
+    const response = await fetch('list.json');
 
     //convert the JSON response to a JS object posts
     const posts = await response.json();
@@ -36,7 +37,7 @@ async function loadPosts() {
 
       container.appendChild(postDiv);
     });
-  } catch {
+  } catch() {
     console.error('Error loading posts:', error);
     container.innerHTML =
       '<p>Failed to load posts. See console for error information.</p>';
