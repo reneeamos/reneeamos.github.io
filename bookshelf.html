@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/styles/index.css" />
+    <title>What I'm Reading</title>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #f5f0e8;
+        --bg-secondary: #ede7d9;
+        --text-primary: #1c1917;
+        --text-secondary: #57534e;
+        --text-tertiary: #a8a29e;
+        --border: rgba(0, 0, 0, 0.12);
+        --border-strong: rgba(0, 0, 0, 0.22);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1c1917;
+          --bg-secondary: #292524;
+          --text-primary: #f5f0e8;
+          --text-secondary: #a8a29e;
+          --text-tertiary: #57534e;
+          --border: rgba(255, 255, 255, 0.1);
+          --border-strong: rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      .shelf-label {
+        font-family: 'Playfair Display', serif;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--text-tertiary);
+        padding: 0 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .shelf-outer {
+        overflow-x: auto;
+        overflow-y: visible;
+        padding: 1rem 2.5rem 1.5rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-strong) transparent;
+      }
+
+      .shelf-outer::-webkit-scrollbar {
+        height: 4px;
+      }
+      .shelf-outer::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .shelf-outer::-webkit-scrollbar-thumb {
+        background: var(--border-strong);
+        border-radius: 2px;
+      }
+
+      .shelf-floor {
+        display: flex;
+        align-items: flex-end;
+        min-width: max-content;
+        border-bottom: 2.5px solid var(--border-strong);
+        padding-top: 2rem;
+        padding-bottom: 0;
+      }
+
+      .book-unit {
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .book-spine {
+        width: 46px;
+        border-radius: 2px 3px 3px 2px;
+        cursor: pointer;
+        position: relative;
+        flex-shrink: 0;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-right: 1.5px solid rgba(0, 0, 0, 0.15);
+      }
+
+      .book-spine:hover {
+        transform: translateY(-7px);
+      }
+
+      .book-spine.active {
+        transform: translateY(-11px);
+      }
+
+      .spine-title {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        transform: rotate(180deg);
+        font-family: 'Playfair Display', serif;
+        font-size: 11px;
+        font-weight: 400;
+        letter-spacing: 0.07em;
+        padding: 8px 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 90%;
+        pointer-events: none;
+        user-select: none;
+      }
+
+      .book-panel {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        flex-shrink: 0;
+        display: flex;
+        align-items: stretch;
+      }
+
+      .book-panel.open {
+        width: 220px;
+      }
+
+      .panel-inner {
+        width: 220px;
+        min-width: 220px;
+        height: 100%;
+        padding: 14px 16px;
+        background: var(--bg-secondary);
+        border: 0.5px solid var(--border);
+        border-left: none;
+        border-radius: 0 3px 3px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        overflow: hidden;
+      }
+
+      .panel-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: var(--text-primary);
+      }
+
+      .panel-author {
+        font-family: 'Crimson Pro', serif;
+        font-style: italic;
+        font-size: 12px;
+        color: var(--text-secondary);
+      }
+
+      .panel-divider {
+        width: 24px;
+        height: 1px;
+        background: var(--border-strong);
+        margin: 3px 0;
+        flex-shrink: 0;
+      }
+
+      .panel-review {
+        font-family: 'Crimson Pro', serif;
+        font-size: 12.5px;
+        line-height: 1.55;
+        color: var(--text-secondary);
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        flex: 1;
+      }
+
+      .panel-stars {
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #c09b3a;
+        margin-top: auto;
+        padding-top: 4px;
+        flex-shrink: 0;
+      }
+
+      footer {
+        padding: 2.5rem 2.5rem 0;
+        font-family: 'Crimson Pro', serif;
+        font-style: italic;
+        font-size: 13px;
+        color: var(--text-tertiary);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Library</h1>
+      <p>Click a spine to read the review</p>
+    </header>
+
+    <p class="shelf-label">Bookshelf</p>
+
+    <div class="shelf-outer">
+      <div class="shelf-floor" id="shelf"></div>
+    </div>
+
+    <footer id="footer">— &nbsp;Click any spine to open its review</footer>
+
+    <script>
+      // ─────────────────────────────────────────────
+      // EDIT YOUR BOOKS HERE
+      // Each book object:
+      //   title   – displayed on spine and in panel
+      //   author  – displayed in panel
+      //   review  – your mini review text
+      //   stars   – integer 1–5
+      //   height  – spine height in px (vary ~155–205 for a natural look)
+      //   spine   – { bg: <hex>, text: <hex> }  ← your custom fill design goes here
+      // ─────────────────────────────────────────────
+      const books = [
+        {
+          title: 'The Name of the Wind',
+          author: 'Patrick Rothfuss',
+          review:
+            'A masterclass in voice and legend-building. Kvothe narrates his own myth with such bravado you barely notice the unreliable narrator at work. The prose sings.',
+          stars: 5,
+          height: 195,
+          spine: {bg: '#2C3E50', text: '#BDC3C7'},
+        },
+        {
+          title: 'Piranesi',
+          author: 'Susanna Clarke',
+          review:
+            'Strange, beautiful, and unlike anything else. A house with infinite halls and tidal statues — Clarke trusts you to sit in the mystery before explaining it.',
+          stars: 5,
+          height: 172,
+          spine: {bg: '#7B8D8E', text: '#ECF0F1'},
+        },
+        {
+          title: 'Sapiens',
+          author: 'Yuval Noah Harari',
+          review:
+            'Sweeping and provocative. Harari makes 70,000 years feel manageable, though the breezy confidence occasionally papers over real historical disagreement.',
+          stars: 4,
+          height: 185,
+          spine: {bg: '#C0392B', text: '#FADBD8'},
+        },
+        {
+          title: 'The Dispossessed',
+          author: 'Ursula K. Le Guin',
+          review:
+            'An anarchist physicist travels between twin worlds. Le Guin builds two complete societies and then dismantles the romance of both. Quietly devastating.',
+          stars: 5,
+          height: 168,
+          spine: {bg: '#1A5276', text: '#AED6F1'},
+        },
+        {
+          title: 'Never Let Me Go',
+          author: 'Kazuo Ishiguro',
+          review:
+            "Horror through omission. The narrator's gentle, circling prose makes the dread accumulate unbearably slowly — and somehow that makes it worse.",
+          stars: 5,
+          height: 178,
+          spine: {bg: '#6C3483', text: '#D7BDE2'},
+        },
+        {
+          title: 'Thinking, Fast and Slow',
+          author: 'Daniel Kahneman',
+          review:
+            'Dense but rewarding. System 1 vs System 2 is a genuinely useful mental model — though later chapters overstay their welcome a little.',
+          stars: 4,
+          height: 190,
+          spine: {bg: '#1E8449', text: '#A9DFBF'},
+        },
+        {
+          title: "Giovanni's Room",
+          author: 'James Baldwin',
+          review:
+            "Short and perfect. A man's cowardice rendered in such clean, aching prose that you feel complicit in every compromise he makes.",
+          stars: 5,
+          height: 165,
+          spine: {bg: '#784212', text: '#F0D9B5'},
+        },
+        {
+          title: 'Project Hail Mary',
+          author: 'Andy Weir',
+          review:
+            'Pure propulsion. The science is fun, the alien friendship is genuinely moving, and it made me cry on a flight — embarrassingly.',
+          stars: 5,
+          height: 182,
+          spine: {bg: '#117A65', text: '#A2D9CE'},
+        },
+        {
+          title: 'The Secret History',
+          author: 'Donna Tartt',
+          review:
+            "A reverse thriller with irresistible atmosphere. You know who dies and who did it from page one. What you don't know is why you still can't stop reading.",
+          stars: 4,
+          height: 188,
+          spine: {bg: '#2E4057', text: '#B8D4E3'},
+        },
+        {
+          title: 'Dune',
+          author: 'Frank Herbert',
+          review:
+            'A world-building monolith. The politics, ecology, and religion are interlocked so precisely that even the appendices feel essential.',
+          stars: 5,
+          height: 200,
+          spine: {bg: '#8D6E08', text: '#FDE68A'},
+        },
+      ];
+      // ─────────────────────────────────────────────
+
+      let openIndex = null;
+
+      function render() {
+        const shelf = document.getElementById('shelf');
+        shelf.innerHTML = '';
+
+        books.forEach((book, i) => {
+          const unit = document.createElement('div');
+          unit.className = 'book-unit';
+
+          const spine = document.createElement('div');
+          spine.className = 'book-spine' + (openIndex === i ? ' active' : '');
+          spine.style.background = book.spine.bg;
+          spine.style.height = book.height + 'px';
+
+          const spineTitle = document.createElement('span');
+          spineTitle.className = 'spine-title';
+          spineTitle.style.color = book.spine.text;
+          spineTitle.textContent = book.title;
+          spine.appendChild(spineTitle);
+
+          spine.addEventListener('click', () => {
+            openIndex = openIndex === i ? null : i;
+            document.getElementById('footer').style.display =
+              openIndex !== null ? 'none' : '';
+            render();
+          });
+
+          const panel = document.createElement('div');
+          panel.className = 'book-panel' + (openIndex === i ? ' open' : '');
+          panel.style.height = book.height + 'px';
+
+          const inner = document.createElement('div');
+          inner.className = 'panel-inner';
+
+          const titleEl = document.createElement('p');
+          titleEl.className = 'panel-title';
+          titleEl.textContent = book.title;
+
+          const authorEl = document.createElement('p');
+          authorEl.className = 'panel-author';
+          authorEl.textContent = book.author;
+
+          const divider = document.createElement('div');
+          divider.className = 'panel-divider';
+
+          const reviewEl = document.createElement('p');
+          reviewEl.className = 'panel-review';
+          reviewEl.textContent = book.review;
+
+          const starsEl = document.createElement('div');
+          starsEl.className = 'panel-stars';
+          starsEl.textContent =
+            '★'.repeat(book.stars) + '☆'.repeat(5 - book.stars);
+
+          inner.appendChild(titleEl);
+          inner.appendChild(authorEl);
+          inner.appendChild(divider);
+          inner.appendChild(reviewEl);
+          inner.appendChild(starsEl);
+          panel.appendChild(inner);
+          unit.appendChild(spine);
+          unit.appendChild(panel);
+          shelf.appendChild(unit);
+        });
+      }
+
+      render();
+    </script>
+  </body>
+</html>

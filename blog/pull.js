@@ -5,13 +5,13 @@
 
 async function loadPosts() {
   try {
-    console.log("I'm trying");
+    //console.log("I'm trying");
     //fetch JSON data and pause execution until the promise resolves
     const response = await fetch('blog/list.json');
 
     //convert the JSON response to a JS object posts
     const posts = await response.json();
-    console.log(posts);
+    //console.log(posts);
 
     //get the container for blogs on blog.html
     const container = document.getElementById('posts');
@@ -24,17 +24,14 @@ async function loadPosts() {
 
       //fill the div with the post data
       postDiv.innerHTML =
-        '<h2><a href="post.html?id=' +
+        '<h2><a href="posts/' +
         post.id +
         '">' +
         post.title +
         '</a></h2>' +
         '<p>' +
         post.summary +
-        '</p>' +
-        '<small>' +
-        post.date +
-        '</small>';
+        '</p>';
 
       container.appendChild(postDiv);
     });
