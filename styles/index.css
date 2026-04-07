@@ -60,6 +60,9 @@ body {
 
 header {
     grid-column: 1 / span 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline; 
 }
 
 a {

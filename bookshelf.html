@@ -207,9 +207,16 @@
   </head>
   <body>
     <header>
-      <h1>My Library</h1>
-      <p>Click a spine to read the review</p>
+      <a href="index.html">Home</a>
+      <div class="left">
+        <a href="design.html">Design</a>
+        <a href="blog.html">Writing</a>
+      </div>
+      <p class="double"></p>
     </header>
+
+    <h1>My Library</h1>
+    <p>Click a spine to read the review</p>
 
     <p class="shelf-label">Bookshelf</p>
 
@@ -232,94 +239,53 @@
       // ─────────────────────────────────────────────
       const books = [
         {
-          title: 'The Name of the Wind',
-          author: 'Patrick Rothfuss',
-          review:
-            'A masterclass in voice and legend-building. Kvothe narrates his own myth with such bravado you barely notice the unreliable narrator at work. The prose sings.',
+          title: 'Katabasis',
+          author: 'Rebecca F. Kuang',
+          review: 'hi!',
           stars: 5,
           height: 195,
           spine: {bg: '#2C3E50', text: '#BDC3C7'},
         },
         {
-          title: 'Piranesi',
-          author: 'Susanna Clarke',
-          review:
-            'Strange, beautiful, and unlike anything else. A house with infinite halls and tidal statues — Clarke trusts you to sit in the mystery before explaining it.',
+          title: 'The Color of Law',
+          author: 'Richard Rothstein',
+          review: 'Hi!',
           stars: 5,
           height: 172,
           spine: {bg: '#7B8D8E', text: '#ECF0F1'},
         },
         {
-          title: 'Sapiens',
-          author: 'Yuval Noah Harari',
+          title: 'Giovannis Room',
+          author: 'James Baldwin',
           review:
-            'Sweeping and provocative. Harari makes 70,000 years feel manageable, though the breezy confidence occasionally papers over real historical disagreement.',
+            'Instantly became one of my favorite books. Shame, guilt, repression, laid bare. The inevitability of the ending hangs over your head as you read but hurts when you get there just the same. Claustrophobic.',
           stars: 4,
           height: 185,
           spine: {bg: '#C0392B', text: '#FADBD8'},
         },
         {
-          title: 'The Dispossessed',
-          author: 'Ursula K. Le Guin',
-          review:
-            'An anarchist physicist travels between twin worlds. Le Guin builds two complete societies and then dismantles the romance of both. Quietly devastating.',
+          title: 'Going Infinite',
+          author: 'Michael Lewis',
+          review: 'hi',
           stars: 5,
           height: 168,
           spine: {bg: '#1A5276', text: '#AED6F1'},
         },
         {
-          title: 'Never Let Me Go',
-          author: 'Kazuo Ishiguro',
-          review:
-            "Horror through omission. The narrator's gentle, circling prose makes the dread accumulate unbearably slowly — and somehow that makes it worse.",
+          title: 'If Beale Street Could Talk',
+          author: 'James Baldwin',
+          review: 'Hi',
           stars: 5,
           height: 178,
           spine: {bg: '#6C3483', text: '#D7BDE2'},
         },
         {
-          title: 'Thinking, Fast and Slow',
-          author: 'Daniel Kahneman',
-          review:
-            'Dense but rewarding. System 1 vs System 2 is a genuinely useful mental model — though later chapters overstay their welcome a little.',
+          title: 'Antony and Cleopatra',
+          author: 'William Shakespeare',
+          review: 'The humor of it all! The drama!',
           stars: 4,
           height: 190,
           spine: {bg: '#1E8449', text: '#A9DFBF'},
-        },
-        {
-          title: "Giovanni's Room",
-          author: 'James Baldwin',
-          review:
-            "Short and perfect. A man's cowardice rendered in such clean, aching prose that you feel complicit in every compromise he makes.",
-          stars: 5,
-          height: 165,
-          spine: {bg: '#784212', text: '#F0D9B5'},
-        },
-        {
-          title: 'Project Hail Mary',
-          author: 'Andy Weir',
-          review:
-            'Pure propulsion. The science is fun, the alien friendship is genuinely moving, and it made me cry on a flight — embarrassingly.',
-          stars: 5,
-          height: 182,
-          spine: {bg: '#117A65', text: '#A2D9CE'},
-        },
-        {
-          title: 'The Secret History',
-          author: 'Donna Tartt',
-          review:
-            "A reverse thriller with irresistible atmosphere. You know who dies and who did it from page one. What you don't know is why you still can't stop reading.",
-          stars: 4,
-          height: 188,
-          spine: {bg: '#2E4057', text: '#B8D4E3'},
-        },
-        {
-          title: 'Dune',
-          author: 'Frank Herbert',
-          review:
-            'A world-building monolith. The politics, ecology, and religion are interlocked so precisely that even the appendices feel essential.',
-          stars: 5,
-          height: 200,
-          spine: {bg: '#8D6E08', text: '#FDE68A'},
         },
       ];
       // ─────────────────────────────────────────────
