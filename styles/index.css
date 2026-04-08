@@ -87,6 +87,7 @@ p.double {
 }
 
 .project {
+    grid-column: 5 / span 10;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
