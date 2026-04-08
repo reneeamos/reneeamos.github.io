@@ -86,8 +86,12 @@ p.double {
     grid-column: 1 / span 10;
 }
 
+.project-item {
+    grid-column: 1 / span 10;
+}
+
 .project {
-    grid-column: 5 / span 10;
+    grid-column: 6 / span 5;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
