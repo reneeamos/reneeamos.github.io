@@ -80,7 +80,7 @@ p.double {
 }
 
 .project_container {
-    grid-column: 3 / span 10;
+    grid-column: 5 / span 10;
 }
 
 .project {
@@ -91,11 +91,6 @@ p.double {
 
 .title {
     padding-left: 25px;
-}
-
-.type {
-    padding-left: 25px;
-    background-color: 2px solid #000; 
 }
 
 .desc {

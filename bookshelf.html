@@ -43,7 +43,7 @@
       }
 
       .shelf-label {
-        font-family: 'Playfair Display', serif;
+        font-family: 'ITC Gaillard Roman', serif;
         font-size: 10px;
         letter-spacing: 0.22em;
         text-transform: uppercase;
@@ -111,7 +111,7 @@
         writing-mode: vertical-rl;
         text-orientation: mixed;
         transform: rotate(180deg);
-        font-family: 'Playfair Display', serif;
+        font-family: 'ITC Gaillard Roman', serif;
         font-size: 11px;
         font-weight: 400;
         letter-spacing: 0.07em;
@@ -215,16 +215,9 @@
       <p class="double"></p>
     </header>
 
-    <h1>My Library</h1>
-    <p>Click a spine to read the review</p>
-
-    <p class="shelf-label">Bookshelf</p>
-
     <div class="shelf-outer">
       <div class="shelf-floor" id="shelf"></div>
     </div>
-
-    <footer id="footer">— &nbsp;Click any spine to open its review</footer>
 
     <script>
       // ─────────────────────────────────────────────
@@ -259,7 +252,6 @@
           author: 'James Baldwin',
           review:
             'Instantly became one of my favorite books. Shame, guilt, repression, laid bare. The inevitability of the ending hangs over your head as you read but hurts when you get there just the same. Claustrophobic.',
-          stars: 4,
           height: 185,
           spine: {bg: '#C0392B', text: '#FADBD8'},
         },
@@ -267,7 +259,6 @@
           title: 'Going Infinite',
           author: 'Michael Lewis',
           review: 'hi',
-          stars: 5,
           height: 168,
           spine: {bg: '#1A5276', text: '#AED6F1'},
         },
@@ -275,7 +266,6 @@
           title: 'If Beale Street Could Talk',
           author: 'James Baldwin',
           review: 'Hi',
-          stars: 5,
           height: 178,
           spine: {bg: '#6C3483', text: '#D7BDE2'},
         },
@@ -283,7 +273,6 @@
           title: 'Antony and Cleopatra',
           author: 'William Shakespeare',
           review: 'The humor of it all! The drama!',
-          stars: 4,
           height: 190,
           spine: {bg: '#1E8449', text: '#A9DFBF'},
         },
@@ -340,16 +329,10 @@
           reviewEl.className = 'panel-review';
           reviewEl.textContent = book.review;
 
-          const starsEl = document.createElement('div');
-          starsEl.className = 'panel-stars';
-          starsEl.textContent =
-            '★'.repeat(book.stars) + '☆'.repeat(5 - book.stars);
-
           inner.appendChild(titleEl);
           inner.appendChild(authorEl);
           inner.appendChild(divider);
           inner.appendChild(reviewEl);
-          inner.appendChild(starsEl);
           panel.appendChild(inner);
           unit.appendChild(spine);
           unit.appendChild(panel);
