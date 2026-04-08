@@ -107,5 +107,5 @@ p.double {
 }
 
 .span {
-    grid-column: 1 / span 10;
+    grid-column: 1 / span 5;
 }
