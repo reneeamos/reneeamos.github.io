@@ -61,6 +61,8 @@ body {
 header {
     grid-column: 1 / span 10;
     display: flex;
+    padding-top: 25px;
+    padding-bottom: 15px;
     justify-content: space-between;
     align-items: baseline; 
 }
@@ -108,4 +110,8 @@ p.double {
 
 .span {
     grid-column: 1 / span 5;
+}
+
+.topBarLink {
+    padding: 0px 5px 0px 5px;
 }
