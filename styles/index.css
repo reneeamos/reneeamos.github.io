@@ -83,13 +83,12 @@ p.double {
 
 
 .project_container {
-    grid-column: 5 / span 10;
+    grid-column: 1 / span 10;
 }
 
 .project {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-
 }
 
 .cover-image-container {
