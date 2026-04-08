@@ -108,8 +108,7 @@ p.double {
 }
 
 .left {
-    justify-self: end;
-    justify-items: end;
+   margin-left: auto;
 }
 
 .span {
