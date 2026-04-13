@@ -91,7 +91,7 @@ p.double {
 
 .project_container {
     grid-column: 1 / span 10;
-    margin: 0px 0px;
+    margin: 0;
 }
 
 .project-item {
