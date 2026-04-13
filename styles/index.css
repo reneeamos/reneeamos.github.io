@@ -91,6 +91,7 @@ p.double {
 
 .project_container {
     grid-column: 1 / span 10;
+    margin: 0px 0px;
 }
 
 .project-item {
@@ -102,6 +103,7 @@ p.double {
     grid-column: 6 / span 5;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    align-items: end;
 }
 
 .cover-image-container {
