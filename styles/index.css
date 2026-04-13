@@ -115,15 +115,16 @@ p.double {
     height: 100%;
     object-fit: cover;
     /* Ensures image fills space while keeping its aspect ratio */
-    display: block;
+    display: inline-block;
 }
 
 .title {
-    padding-left: 25px;
+    padding: 0px 0px 0px 25px;
+
 }
 
 .desc {
-    padding-left: 25px;
+    padding: 0px 0px 0px 25px;
     grid-column: 2 / span 2;
 }
 
