@@ -111,11 +111,10 @@ p.double {
 }
 
 .cover-image {
-    /*width: 100%;*/
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensures image fills space while keeping its aspect ratio */
-    display: inline-block;
+    display: inline;
 }
 
 .title {
