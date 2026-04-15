@@ -93,8 +93,8 @@ p.double {
 }
 
 .project-item {
+    display: grid;
     grid-template-columns: repeat(10, 1fr);
-
 }
 
 .cover-image-container {
