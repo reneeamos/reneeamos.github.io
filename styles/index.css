@@ -88,14 +88,8 @@ p.double {
     padding: 0px 0px 0px 0px;
 }
 
-
-.project_container {
-    grid-column: 1 / span 10;
-    margin: 0;
-}
-
 .project-item {
-    display: flex;
+    display: contents;
 }
 
 .project {
@@ -107,13 +101,11 @@ p.double {
 
 .cover-image-container {
     grid-column: 1 / span 5;
-    overflow: hidden;
 }
 
 .cover-image {
     width: 100%;
     height: auto;
-    display: inline;
 }
 
 .title {
