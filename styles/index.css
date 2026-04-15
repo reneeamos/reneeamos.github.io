@@ -63,6 +63,7 @@ body {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     margin: 0 5vw;
+    row-gap: 100px;
 }
 
 header {
@@ -90,7 +91,6 @@ p.double {
 
 .project-container {
     grid-column: 1 / span 10;
-    row-gap: 100px;
     display: contents;
 }
 
