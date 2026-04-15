@@ -90,12 +90,12 @@ p.double {
 
 .project-container {
     grid-column: 1 / span 10;
+    row-gap: 100px;
     display: contents;
 }
 
 .project-item {
     display: contents;
-    padding-bottom: 100px;
 }
 
 .cover-image-container {
