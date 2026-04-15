@@ -95,6 +95,7 @@ p.double {
 
 .project-item {
     display: contents;
+    padding-bottom: 50px;
 }
 
 .cover-image-container {
@@ -127,6 +128,7 @@ p.double {
 .name {
     font-family: "ITC Galliard Bold";
     margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .left {
