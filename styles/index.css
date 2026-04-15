@@ -128,8 +128,8 @@ p.double {
 
 .name {
     font-family: "ITC Galliard Bold";
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .left {
