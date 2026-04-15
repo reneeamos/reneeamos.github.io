@@ -90,11 +90,11 @@ p.double {
 
 .project-container {
     grid-column: 1 / span 10;
+    display: contents;
 }
 
 .project-item {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    display: contents;
 }
 
 .cover-image-container {
