@@ -88,15 +88,13 @@ p.double {
     padding: 0px 0px 0px 0px;
 }
 
-/*.project-container {
-    grid-
-
-}*/
+.project-container {
+    grid-column: 1 / span 10;
+}
 
 .project-item {
-    display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-column: 1 / -1;
+
 }
 
 .cover-image-container {
