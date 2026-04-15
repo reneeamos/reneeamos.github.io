@@ -63,7 +63,7 @@ body {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     margin: 0 5vw;
-    row-gap: 100px;
+    row-gap: 25px;
 }
 
 header {
@@ -123,7 +123,7 @@ p.double {
     padding: 0px 0px 0px 25px;
     grid-column: 2 / span 3;
     margin-bottom: 0;
-    color: lightgray;
+    color: gray;
 }
 
 .name {
