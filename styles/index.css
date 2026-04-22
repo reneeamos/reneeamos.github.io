@@ -83,6 +83,11 @@ header {
     align-items: baseline;
 }
 
+.topBarLink {
+    padding: 0px 10px 0px 10px;
+
+}
+
 /* PROJECT CONTAINER becomes a real grid wrapper */
 .project-container {
     grid-column: 1 / -1;
