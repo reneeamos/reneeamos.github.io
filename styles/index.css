@@ -59,6 +59,11 @@ h6 {
     line-height: 1.1;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .span {
     grid-column-start: 1;
     grid-column-end: 5;
