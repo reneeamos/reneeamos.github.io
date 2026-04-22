@@ -111,6 +111,7 @@ header {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: end;
+    padding: 2vw 0 2vw 0;
 }
 
 /* IMAGE styling */
